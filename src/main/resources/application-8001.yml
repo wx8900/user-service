@@ -2,6 +2,6 @@ eureka:
   client:
     service-url:
       #defaultZone: http://${eureka.host:eureka-7001.com}:${eureka.port:7001}/eureka/
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://localhost:7001/eureka/
       register-with-eureka: false
       fetch-registry: false
