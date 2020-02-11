@@ -10,6 +10,11 @@ public class DateServiceController {
 
     @RequestMapping( value = "/test", method = RequestMethod.GET )
     public String test( @RequestParam String param ){
+        return "test " + param;
+    }
+
+    @RequestMapping( value = "/hello", method = RequestMethod.GET )
+    public String hello( @RequestParam String param ){
         return "hello " + param;
     }
 }
