@@ -1,6 +1,6 @@
 # 用户项目的端口号
 server:
-  port: 8001
+  port: 8002
 # 服务别名----服务注册到注册中心的名称
 spring:
   application:
@@ -9,7 +9,7 @@ eureka:
   client:
     service-url:
       # 将当前用户服务注册到eureka服务地址
-      defaultZone: http://eureka-7001.com:7001/eureka
+      defaultZone: http://eureka-7002.com:7002/eureka
       # 需要将我的服务注册到 eureka 上
       register-with-eureka: true
       # 需要检索服务
