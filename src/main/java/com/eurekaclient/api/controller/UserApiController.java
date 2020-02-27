@@ -6,14 +6,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * @author Jack
  */
 @RestController
 public class UserApiController {
 
+    private static DateTimeFormatter pattern = DateTimeFormatter.ofPattern("G yyyy年MM月dd号 E a hh时mm分ss秒");
+
     @Value("${server.port}")
     private String serverPort;
+
 
     @RequestMapping( value = "/test", method = RequestMethod.GET )
     public String test( @RequestParam String param ){
@@ -25,8 +31,16 @@ public class UserApiController {
         return "hello " + param  +  ", port is : " + serverPort;
     }
 
-    @RequestMapping()
-    public String getUser() {
-        return " 你是VIP用户，享受VIP专属服务！你的端口号是 ： " + serverPort;
+    @RequestMapping(value = "/getUser", method = RequestMethod.GET )
+    public String getUser( @RequestParam String name ) {
+        LocalDateTime now = LocalDateTime.now();
+        String format = now.format(pattern);
+        return name + "，您好，您是VIP用户，享受VIP专属服务！你的端口号是 ： "
+                + serverPort +", 当前日期是 " + format;
+    }
+
+    @RequestMapping(value = "/getUserInfo", method = RequestMethod.GET )
+    public String getUser( @RequestParam String name , @RequestParam Integer age) {
+        return name + "，您好，您的年龄是 ： " + age;
     }
 }
