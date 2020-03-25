@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * http://localhost:8001/test?param=abc
  * test abc, Port is : 8001
  *
+ *
  * 创建服务提供者
  * Instances currently registered with Eureka
  * SERVICE-PROVIDER	n/a (2)	(2)	UP (2) - 192.168.xxx.xxx:service-provider:8001 , 192.168.xxx.xxx:service-provider:8002
