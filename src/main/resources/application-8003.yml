@@ -1,10 +1,12 @@
-# 用户项目的端口号
-server:
-  port: 8003
 # 服务别名----服务注册到注册中心的名称
 spring:
   application:
     name: service-provider
+
+# 用户项目的端口号
+server:
+  port: 8003
+
 eureka:
   client:
     service-url:

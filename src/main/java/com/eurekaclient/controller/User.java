@@ -1,4 +1,4 @@
-package com.eurekaclient.api.controller;
+package com.eurekaclient.controller;
 
 public class User {
     private long id;
